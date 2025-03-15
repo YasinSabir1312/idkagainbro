@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Web Page</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  header {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    padding: 10px 0;
+  }
+
+  nav a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  nav a:hover {
+    background-color: #555;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;
+    }
+
+    nav a {
+      padding: 15px 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Responsive Web Page</h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <main>
+    <h2>Welcome to Our Page</h2>
+    <p>This is a fully responsive page with a flexible grid layout.</p>
+
+    <div class="grid" id="gridContainer">
+      <!-- Dynamic content will be added here -->
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Responsive Web Page
+  </footer>
+
+<script>
+  const gridContainer = document.getElementById('gridContainer');
+
+  const items = [
+    'Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6'
+  ];
+
+  items.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.textContent = item;
+    gridContainer.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
